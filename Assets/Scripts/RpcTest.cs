@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4dac4f022116fe44e1613e1beb47ca0e612feb42c156ea629fa9c7e95107a9c0
-size 1064
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Unity.Netcode;
+
+public class RpcTest : NetworkBehaviour
+{
+    public override void OnNetworkSpawn()
+    {
+        if(!IsServer && IsOwner) // Only send an RPC to the server on the client that owns the NetworkObject that owns this NetworkBehavior instance
+        {
+            TestServerRpc(0, NetworkObjectId);
+        }
+    }
+
+    [ClientRpc]
+    void TestClientRpc(int value, ulong sourceNetworkObjectId)
+    {
+        Debug.Log($"Client Received the RPC #{value} on NetworkObject #{sourceNetworkObjectId}");
+        if (IsOwner) //Only send an RPC to the server on the client that owns the NetworkObject that owns this NetworkBehaviour instance
+
+		{
+            TestServerRpc(value + 1, sourceNetworkObjectId);
+        }
+    }
+
+    [ServerRpc]
+    void TestServerRpc(int value, ulong sourceNetworkObjectId)
+    {
+        Debug.Log($"Server Received the RPC #{value} on NetworkObject #{sourceNetworkObjectId}");
+        TestClientRpc(value, sourceNetworkObjectId);
+    }
+	
+
+}

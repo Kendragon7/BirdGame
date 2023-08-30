@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a7e666c44940dcea48902d139fb24425aae70a92df01addac7cf2efd52dcf31a
-size 179
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Attach to Unity",
+            "type": "vstuc",
+            "request": "attach",
+        }
+     ]
+}
