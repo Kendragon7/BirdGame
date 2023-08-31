@@ -1,22 +1,3 @@
-fileFormatVersion: 2
-guid: 8a2b9e2a607dd2143b58c44bc32410b4
-TrueTypeFontImporter:
-  externalObjects: {}
-  serializedVersion: 4
-  fontSize: 16
-  forceTextureCase: -2
-  characterSpacing: 0
-  characterPadding: 1
-  includeFontData: 1
-  fontName: Electronic Highway Sign
-  fontNames:
-  - Electronic Highway Sign
-  fallbackFontReferences: []
-  customCharacters: 
-  fontRenderingMode: 0
-  ascentCalculationMode: 1
-  useLegacyBoundsCalculation: 0
-  shouldRoundAdvanceValue: 1
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+version https://git-lfs.github.com/spec/v1
+oid sha256:624880c7e8fa4c46da5986733c4a03f00204ea09b5686f83594b434374bea2a7
+size 722
